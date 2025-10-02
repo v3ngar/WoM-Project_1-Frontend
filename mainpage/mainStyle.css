@@ -1,0 +1,107 @@
+body {
+    background-color: #adc1c4;
+  }
+
+
+     
+  #postitnote{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:10px;
+    }
+
+   
+   #postDiv_id{
+    text-align: center;
+    padding: 10px;
+   }
+   
+   #container{
+    display:flex;
+    flex-wrap: wrap;
+   }
+
+   #messages{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bold;
+    color:#bdb76d;
+   }
+   
+   h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:#3b8d99
+   }
+
+  #userInfo button {
+    width: 10%;
+    padding: 12px;
+    color:#ffffff;
+    background-color:#3b8d99;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  #draggable {
+    width: 50px;
+    height: 50px;
+    padding: 0.5em;
+    background-color: lightblue;
+  }
+  .draggable-note {
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+  }
+
+  .creativeContainer{
+  display:flex
+  }
+  #deleteButton {
+    display: flex;
+    margin-left: auto;
+    background-color: rgb(168, 34, 34);
+    text-align: left;
+    color: white;
+    border-radius: 5px;
+    border: none
+  }
+  #noteForm{
+    display: flex;
+}
+
+  #noteForm textarea {
+   width:300px;
+   height: 100px;
+  }
+  #postButton {
+    background-color: rgb(34, 168, 34);
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    
+  }
+
+
+#goodNote{
+  display: none;
+ 
+  background-color: rgb(34, 168, 34);
+  color: white;
+  margin-top:40px;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+  position:fixed;
+  z-index: 50;
+}
+
+  #deleteButton:hover {
+    background-color: rgb(224, 105, 105);
+  }
+  
+  

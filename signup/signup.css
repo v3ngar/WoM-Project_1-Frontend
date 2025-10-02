@@ -1,0 +1,28 @@
+body{
+background-color: #34737c;
+color:rgb(26, 21, 14);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+input, select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    background-color: #3b8d99;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+
+  }

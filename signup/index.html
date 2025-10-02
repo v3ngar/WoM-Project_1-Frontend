@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+
+    <form id="registerForm">
+      <h2>Create new user</h2>
+      <p id="message"></p>
+      
+      <!-- namn -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required> <br><br>
+      
+      <!-- roll -->
+      <label for="role">Role:</label>
+      <input type="text" id="role" name="role" placeholder="user / admin" required> <br><br>
+
+      <!-- email -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required> <br><br>
+      
+      <!-- lösenord -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required> <br><br>
+      
+      <!-- skicka iväg formen -->
+      <button type="submit">Register</button>
+      
+      <!-- tillbaka till inloggning -->
+      <button type="button" onclick="backToLogin()">Back to Login</button>
+    </form>
+    
+  
+    
+
+</body>
+</html>
+<link rel="stylesheet" href="signup.css">
+<link rel="stylesheet" href="../style.css">
+<script src="newuser.js"></script>

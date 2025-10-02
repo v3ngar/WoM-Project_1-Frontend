@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jQueryUI för Drag&drop -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  
+  <!-- vårt egen .js fil -->
+  <script src="notes.js"></script>
+  <!-- style -->
+  <link rel="stylesheet" href="mainStyle.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <title>Login Form</title>
+</head>
+<!-- Fetchar anteckningar på load() -->
+<body onload="fetchNotes()">
+
+  <div id="messages"></div>
+
+<!-- meddelande till användaren -->
+  <div id="goodNote">New Note added!</div>
+
+<div id="userInfo">
+  <!-- skapa en ny anteckning -->
+    <button id="newNoteButton" onclick="newNote()">New Note</button>
+    
+    <!-- logga ut -->
+    <button id="logoutButton" onclick="logOut()">Log out</button>
+
+ <!-- textare för användaren att lägga till en ny anteckning -->
+  </div>   
+    <div id="noteForm" style="display: none; margin-top: 10px;">
+      <textarea id="noteContent" placeholder="Enter your note here"></textarea>
+      <button id="postButton" onclick="Notepost()">Post</button>
+    </div>
+  
+   <!-- Här visas anteckningarna från fetchNotes() -->
+    <div id ="container"></div>
+
+</body>
+
+</html>
+

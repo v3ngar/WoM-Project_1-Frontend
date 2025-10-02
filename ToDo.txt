@@ -1,0 +1,19 @@
+Todo
+401 alert Unautharized - ok
+create account bug fix - ok
+unison color
+snyggare note ruta
+post knapp
+
+Uppstädning
+login.html OK
+login script OK
+
+Signup html OK
+signup script OK
+
+testanvändare
+  name: 'Fredde',
+  role: 'admin',
+  email: 'fredde@mail.com',
+  password: 'fredde'
