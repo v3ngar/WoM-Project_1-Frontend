@@ -1,12 +1,17 @@
-FROM nginxinc/nginx-unprivileged:1.27-alpine
-WORKDIR /usr/share/nginx/html
-# rensa default-sidor så vi alltid ser våra filer
-RUN rm -rf /usr/share/nginx/html/* || true
+# Minimal Node-bild
+FROM node:20-alpine
 
-# kopiera din frontend
+WORKDIR /app
+
+# Installera bara det som behövs för att köra
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Kopiera in ALL front-end statik och servern
 COPY . .
 
-# aktivera proxyn
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
+# Kör på 8080 (Rahti/OKD kör gärna 8080 och slumpad UID)
+ENV PORT=8080
 EXPOSE 8080
+
+CMD ["npm", "start"]
