@@ -10,7 +10,7 @@ function login(){
     
     try {
       // Skicka POST request till serverns users-endpoint
-      const response = await fetch('https://wo-m-project-1-login-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/users/login',
+      const response = await fetch('api/login/users/login',
       {
         method: 'POST',
         headers: {

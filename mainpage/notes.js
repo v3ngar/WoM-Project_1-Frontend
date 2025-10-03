@@ -11,7 +11,7 @@
   async function fetchNotes() {
     
     //initsierar api varablen fån server
-    const api = "https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes";
+    const api = "/api/notes/notes";
   
     //kollar efter JWT token  
     if (jwttoken) {
@@ -98,7 +98,7 @@
     if (noteContent.trim()) { 
       try {
         // POST request för att skicka ny anteckning
-        const response = await fetch('https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes', {
+        const response = await fetch('/api/notes/notes', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ async function deleteNote(noteId) {
  
     try {
         // DELETE Request för $noteId
-        const response = await fetch(`https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes/${noteId}`, {
+        const response = await fetch('/api/notes/notes/${noteId}', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
