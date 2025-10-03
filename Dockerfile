@@ -1,7 +1,8 @@
 FROM node:20-alpine
 WORKDIR /app
 COPY package*.json ./
-# Har du inte package-lock.json Byt till: RUN npm install --omit=dev
+# Har du inte package-lock.json i repot? Byt raden till:
+# RUN npm install --omit=dev
 RUN npm ci --omit=dev
 COPY . .
 ENV PORT=8080
