@@ -10,7 +10,7 @@
     "version": "1.0.0",
 
     "Scripts":{
-        "start": "node server.js"
+        "start": "node server.cjs"
     },
     
 
