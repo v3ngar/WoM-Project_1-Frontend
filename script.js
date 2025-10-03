@@ -10,7 +10,7 @@ function login(){
     
     try {
       // Skicka POST request till serverns users-endpoint
-      const response = await fetch('api/login/users/login',
+      const response = await fetch('/users/login',
       {
         method: 'POST',
         headers: {
