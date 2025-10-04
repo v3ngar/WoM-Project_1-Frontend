@@ -83,7 +83,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js",
     "test": "echo \"no tests\""
   },
   "keywords": [],

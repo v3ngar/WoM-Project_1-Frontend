@@ -146,7 +146,7 @@ async function deleteNote(noteId) {
  
     try {
         // DELETE Request för $noteId
-        const response = await fetch('https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes/${noteId}', {
+        const response = await fetch(`https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes/${noteId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
