@@ -11,9 +11,10 @@
   async function fetchNotes() {
     
     //initsierar api varablen fån server
-    const api = "https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes";
-  
-    //kollar efter JWT token  
+    //const api = "https://wo-m-project-1-notes-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/notes";
+    const api = "http://localhost:3002/notes";
+
+    //kollar efter JWT token
     if (jwttoken) {
       //console.log('jwtToken retrieved:', jwttoken);
           } else {

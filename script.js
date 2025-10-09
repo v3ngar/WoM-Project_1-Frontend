@@ -10,8 +10,10 @@ function login(){
     
     try {
       // Skicka POST request till serverns users-endpoint
-      const response = await fetch('https://wo-m-project-1-login-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/users/login',
-      {
+      //const response = await fetch('https://wo-m-project-1-login-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/users/login',
+      //const response = await fetch('http://localhost:8080/users/login', {
+      const response = await fetch('http://localhost:3001/users/login', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,9 +37,12 @@ function login(){
         
         //spara JWT token i webbläsarens Storage
         localStorage.setItem('jwtToken', data.jwt);
+        localStorage.setItem('refreshToken', data.refreshToken);
 
         // redirect till huvudsidan
-        window.location.href = "/mainpage/index.html", "blank";
+        
+        //window.location.href = "/mainpage/index.html", "blank";     Redirect till Notes sidan
+        window.location.href = "/Pastebin/index.html";
       } else {
         console.error('Login failed:', response.statusText);
       }
@@ -48,6 +53,7 @@ function login(){
 
   });
 }
+
 
 // Redirect till att skapa en ny användare
 function signupRedirect(){
