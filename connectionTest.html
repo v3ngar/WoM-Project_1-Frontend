@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <input id="in" placeholder="Type message...">
+    <div id="out"></div>
+    <div id="err" style="color: red;"></div>
+
+    <script>
+        // For testing, let's create a simple JWT token
+        // In production, you'd get this from your login system
+        
+        console.log('Attempting WebSocket connection...');
+        
+        const socket = new WebSocket('ws://localhost:5000?token=test-token');
+        
+        socket.onopen = function (event) {
+            console.log('Connected to WebSocket server');
+            document.querySelector('#err').innerHTML = 'Connected!';
+        };
+
+        socket.onmessage = function (event) {
+            console.log('Received message:', event.data);
+            const data = JSON.parse(event.data);
+            
+            if (data.status == 0) {
+                document.querySelector('#out').innerHTML = data.msg;
+                document.querySelector('#err').innerHTML = '';
+            } else {
+                document.querySelector('#err').innerHTML = data.msg;
+            }
+        };
+
+        socket.onclose = function (event) {
+            console.log('Connection closed');
+            document.querySelector('#err').innerHTML = 'Connection closed';
+        };
+
+        socket.onerror = function (error) {
+            console.error('WebSocket error:', error);
+            document.querySelector('#err').innerHTML = 'Connection error';
+        };
+
+        document.querySelector('#in').addEventListener('input', (evt) => {
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.send(evt.target.value);
+            }
+        });
+    </script>
+</body>
+</html>

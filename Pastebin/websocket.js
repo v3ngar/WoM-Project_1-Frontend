@@ -1,6 +1,11 @@
-        WS_TOKEN = localStorage.getItem('ws_token') || 'my-secret-token';
+       
+       WS_TOKEN = localStorage.getItem('ws_token') || 'my-secret-token';
+        //WS_TOKEN = localStorage.getItem('jwtToken') || localStorage.getItem('authToken');
         console.log(WS_TOKEN);
-
+            if (!WS_TOKEN) {
+            console.error('No JWT token found - user needs to login');
+            document.querySelector('#err').innerHTML = 'Please login first';
+        }
         // Create a WebSocket connection
         //
         const socket = new WebSocket(`ws://localhost:5000?token=${WS_TOKEN}`); 
@@ -31,3 +36,5 @@
         document.querySelector('#in').addEventListener('input', (evt) => {
             socket.send(evt.target.value);
         });
+
+        
