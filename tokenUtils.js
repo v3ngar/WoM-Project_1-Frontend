@@ -18,6 +18,7 @@ async function refreshAccessToken() {
     });
 
     if (refreshResponse.ok) {
+      console.log("refreshtoken OK")
       const data = await refreshResponse.json();
       
       // Store the new access token (backend returns it as 'jwt')

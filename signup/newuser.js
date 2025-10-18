@@ -14,7 +14,8 @@
     try {
       // POST request för att skapa ny användare
       
-        const response = await fetch('https://wo-m-project-1-login-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/users', {
+        //const response = await fetch('https://wo-m-project-1-login-api-webbtjanster-och-molnteknologi.2.rahtiapp.fi/users', {
+        const response = await fetch('http://127.0.0.1:3001/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
