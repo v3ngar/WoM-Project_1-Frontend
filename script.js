@@ -34,13 +34,16 @@ function login(){
         //användbar JWT kod till projekt 2:
         //console.log('Login successful:', data);
         //console.log("data.jwt = " + data.jwt)
+       
         
-        //spara JWT token i webbläsarens Storage
-        localStorage.setItem('jwtToken', data.jwt);
+        //spara JWT token i webbläsarens Storage (using tokenUtils.js naming convention)
+        localStorage.setItem('accessToken', data.jwt);
         localStorage.setItem('refreshToken', data.refreshToken);
+        localStorage.setItem('tokenIssuedAt', Date.now().toString());
+        
 
         // redirect till huvudsidan
-        
+        refreshAccessToken()
         //window.location.href = "/mainpage/index.html", "blank";     Redirect till Notes sidan
         window.location.href = "/Pastebin/index.html";
       } else {
