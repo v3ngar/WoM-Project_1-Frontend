@@ -24,10 +24,14 @@ async function refreshAccessToken() {
       // Store the new access token (backend returns it as 'jwt')
       localStorage.setItem('accessToken', data.jwt);
       localStorage.setItem('tokenIssuedAt', Date.now().toString());
+
       
       console.log('Token refreshed successfully');
+      console.log("Accesstoken = " + data.jwt)
       return data.jwt;
-    } else {
+    } 
+    
+    /*else {
       // Refresh failed, clear tokens and redirect to login
       console.log('Refresh token expired or invalid');
       localStorage.removeItem('accessToken');
@@ -35,12 +39,12 @@ async function refreshAccessToken() {
       localStorage.removeItem('tokenIssuedAt');
       window.location.href = '/login.html';
       return null;
-    }
+    }*/
   } catch (error) {
     console.error('Token refresh failed:', error);
     localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('tokenIssuedAt');
+    //localStorage.removeItem('refreshToken');
+    //localStorage.removeItem('tokenIssuedAt');
     window.location.href = '/login.html';
     return null;
   }
@@ -55,18 +59,4 @@ function isAccessTokenExpired() {
 }
 
 // Get a valid access token (refresh if needed)
-async function getValidAccessToken() {
-  const accessToken = localStorage.getItem('accessToken');
-  
-  if (!accessToken) {
-    window.location.href = '/login.html';
-    return null;
-  }
-  
-  if (isAccessTokenExpired()) {
-    console.log('Access token expired, refreshing...');
-    return await refreshAccessToken();
-  }
-  
-  return accessToken;
-}
+

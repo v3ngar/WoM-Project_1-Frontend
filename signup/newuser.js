@@ -31,6 +31,7 @@
         message.textContent = data.message;
         message.style.color = 'green';
         console.log("Ny användare skapad!");
+        backToLogin();
       
         //visa JWT token för devvande
         //console.log('JWT Token:', data.token);
