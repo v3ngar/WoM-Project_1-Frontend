@@ -6,5 +6,5 @@
   function reconnect(){
     console.log("Reconnecting...");
     refreshAccessToken();
-    //window.location.reload();
+    
   }
